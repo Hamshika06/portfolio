@@ -1,0 +1,175 @@
+// ===================== EXPERIENCE =====================
+const EXPERIENCE = [
+  {
+    company: "OPENLANE / Automotive Finance Corporation (AFC)",
+    role: "Data Scientist / BI Analyst Intern",
+    dates: "June 2026 – August 2026",
+    summary:
+      "Worked on real-world machine learning and analytics problems spanning B2B vehicle recommendation, dealer segmentation, and credit risk modeling.",
+    stack: ["Python", "SQL", "Snowflake", "Snowpark", "dbt"],
+    projects: [
+      {
+        title: "Dealer Vehicle Recommendation System",
+        points: [
+          "Built a B2B vehicle recommender using Snowflake notebooks with feature engineering and similarity modeling",
+          "Incorporated Snowflake Cortex embeddings to build dealer similarity representations",
+          "Addressed cold-start dealers using postal-code and credit-tier based lookalikes",
+          "Integrated live dealer bidding and purchase information into scoring",
+          "Used dbt and GitHub for production workflows",
+        ],
+        metrics: [
+          { value: "~20%", label: "precision improvement" },
+          { value: "15min → 5min", label: "runtime (~67% faster)" },
+        ],
+      },
+      {
+        title: "Dealer Credit Risk Scorecard",
+        points: [
+          "Built a Logistic Regression model for dealer credit-line approval",
+          "Used time-based train/test splits to reflect production conditions",
+          "Evaluated performance with precision and recall",
+          "Benchmarked against the incumbent approach",
+        ],
+        metrics: [],
+      },
+    ],
+  },
+];
+
+// ===================== PROJECTS =====================
+// tags used for filtering: LLM, Agentic AI, RAG, Computer Vision, NLP, Deep Learning, Research
+const PROJECTS = [
+  {
+    id: "alta",
+    name: "ALTA — AI Risk & Route Intelligence",
+    tagline: "A multi-agent AI system for intelligent route and risk analysis.",
+    problem:
+      "Route planning and risk assessment for logistics decisions typically rely on static rules. ALTA uses an LLM-driven multi-agent workflow to reason over route data and produce explainable risk scores.",
+    tech: ["LangGraph", "GPT-4o", "FastAPI", "React", "Leaflet", "Recharts", "Python"],
+    details: [
+      "Built an 8-node LangGraph workflow orchestrating specialized reasoning agents",
+      "Used LLM-based reasoning to generate risk scores from 0–100",
+      "Evaluated 900+ routes with compliance-oriented logging",
+      "Built a full-stack frontend/backend architecture (React + FastAPI)",
+    ],
+    tags: ["Agentic AI", "LLM"],
+    github: "GITHUB_URL_HERE",
+    demo: "LIVE_DEMO_URL_HERE",
+    featured: true,
+  },
+  {
+    id: "coincoach",
+    name: "CoinCoach — Personal Finance AI Agent",
+    tagline: "An agentic AI application that helps users understand their financial situation and goals.",
+    problem:
+      "Personal finance conversations are unstructured. CoinCoach extracts structured financial information from natural language and produces an inspectable, structured assessment.",
+    tech: ["Python", "LangChain", "Gemini", "Pydantic", "Agent workflows"],
+    details: [
+      "Extracts structured financial information from natural language",
+      "Identifies missing information and detects contradictions",
+      "Evaluates savings goals against stated financial context",
+      "Produces structured financial assessments with inspectable reasoning traces",
+    ],
+    tags: ["Agentic AI", "LLM", "NLP"],
+    github: "GITHUB_URL_HERE",
+    demo: null,
+  },
+  {
+    id: "echo-of-hands",
+    name: "Echo of Hands",
+    tagline: "A computer vision system that converts hand gestures into voice and text.",
+    problem:
+      "Sign and gesture-based communication needs low-latency, accessible interfaces. This project runs gesture recognition entirely client-side for accessible human-computer interaction.",
+    tech: ["Computer Vision", "Neural Networks", "JavaScript", "Machine Learning"],
+    details: [
+      "Recognizes approximately 18 hand signs",
+      "Trained on approximately 2,470 samples",
+      "Achieved approximately 97.9% accuracy",
+      "Uses client-side inference for accessible, low-latency interaction",
+    ],
+    tags: ["Computer Vision", "Deep Learning"],
+    github: "GITHUB_URL_HERE",
+    demo: "LIVE_DEMO_URL_HERE",
+  },
+  {
+    id: "jocata",
+    name: "Jocata — Identity Card Information Extraction",
+    tagline: "A deep learning computer vision system for extracting information from identity cards for banking applications.",
+    problem:
+      "Manual identity verification is slow and error-prone. This system automates field extraction from ID cards using object detection, tuned for banking-grade accuracy and latency.",
+    tech: ["PyTorch", "TensorFlow", "CUDA", "Computer Vision", "OCR"],
+    details: [
+      "Used SSD/ResNet-based object detection for field localization",
+      "Achieved approximately 92% performance on evaluation",
+      "Used GPU acceleration to reduce inference latency by approximately 30%",
+    ],
+    tags: ["Computer Vision", "Deep Learning"],
+    github: "GITHUB_URL_HERE",
+    demo: null,
+  },
+  {
+    id: "midi-generation",
+    name: "MIDI Generation",
+    tagline: "A deep learning project exploring automatic music generation.",
+    problem:
+      "Symbolic music generation raises different modeling challenges than audio generation. This project compares generative architectures for sequence-based music composition.",
+    tech: ["GAN", "GRU", "VAE", "Transformer", "Jukebox"],
+    details: [
+      "Worked with 100+ MIDI files as training data",
+      "Explored GAN, GRU, VAE, Transformer, and Jukebox-style architectures",
+      "Developed sequence-based music generation models",
+    ],
+    tags: ["Deep Learning"],
+    github: "GITHUB_URL_HERE",
+    demo: null,
+  },
+  {
+    id: "hydrogeologic-gnn",
+    name: "Learning Hydrogeologic Connectivity with Graph Neural Networks",
+    tagline: "Ongoing research exploring GNNs to model relationships between groundwater monitoring wells.",
+    problem:
+      "Groundwater monitoring networks often contain spatial and temporal data gaps. This direction learns relationships between wells using spatial, aquifer, and well characteristics alongside groundwater-level time series.",
+    tech: ["Graph Neural Networks", "Uncertainty Estimation", "Active Learning", "Python"],
+    details: [
+      "Modeling spatial, aquifer, and well characteristics as graph structure",
+      "Incorporating groundwater-level time series and temporal relationships",
+      "Long-term goal: combine GNNs, uncertainty estimation, and active learning",
+      "Aim: identify where an additional observation would be most informative",
+    ],
+    tags: ["Research", "Deep Learning"],
+    github: null,
+    demo: null,
+    ongoing: true,
+    featured: true,
+  },
+];
+
+// ===================== SKILLS =====================
+const SKILLS = [
+  {
+    category: "Programming",
+    items: ["Python", "SQL", "R", "C++"],
+  },
+  {
+    category: "Machine Learning",
+    items: ["Scikit-learn", "XGBoost", "LightGBM", "TensorFlow", "PyTorch", "Keras"],
+  },
+  {
+    category: "AI / GenAI",
+    items: ["LangChain", "LangGraph", "Hugging Face", "RAG", "LLMs", "Agentic AI", "Embeddings", "LLM Evaluation"],
+  },
+  {
+    category: "Data / Cloud",
+    items: ["Snowflake", "Snowpark", "Snowflake Cortex", "dbt", "PostgreSQL", "MySQL", "SQLite"],
+  },
+  {
+    category: "Deployment / Engineering",
+    items: ["FastAPI", "React", "Docker", "Git", "GitHub", "Render", "Netlify"],
+  },
+  {
+    category: "Visualization",
+    items: ["Tableau", "Power BI", "Matplotlib"],
+  },
+];
+
+const FILTER_TAGS = ["All", "Agentic AI", "LLM", "Computer Vision", "NLP", "Deep Learning", "Research"];

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hamshika Radhakrishnan | Data Scientist & ML Engineer</title>
+<meta name="description" content="Hamshika Radhakrishnan is an M.S. Data Science student at the University of Maryland focused on machine learning, generative AI, agentic systems, and applied research." />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Hamshika Radhakrishnan | Data Scientist & ML Engineer" />
+<meta property="og:description" content="Building intelligent systems at the intersection of Data, AI & Research. M.S. Data Science student at UMD focused on ML, GenAI, agentic systems, and applied research." />
+<meta property="og:image" content="images/og-cover.svg" />
+<meta property="og:url" content="https://hamshikaradhakrishnan.dev" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Hamshika Radhakrishnan | Data Scientist & ML Engineer" />
+<meta name="twitter:description" content="Building intelligent systems at the intersection of Data, AI & Research." />
+<meta name="twitter:image" content="images/og-cover.svg" />
+
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">HR<span class="dot">.</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link" data-section="home">Home</a>
+      <a href="#about" class="nav-link" data-section="about">About</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+      <a href="#research" class="nav-link" data-section="research">Research</a>
+      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+      <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="https://github.com/Hamshika06" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.03c0 5.03 3.26 9.29 7.79 10.8.57.1.78-.25.78-.55 0-.27-.01-1.15-.02-2.09-3.17.69-3.84-1.36-3.84-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.05-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.16a10.9 10.9 0 0 1 5.72 0c2.18-1.47 3.14-1.16 3.14-1.16.62 1.57.23 2.73.11 3.02.73.79 1.17 1.81 1.17 3.05 0 4.37-2.67 5.34-5.21 5.62.41.36.77 1.06.77 2.14 0 1.54-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.53 10.53 0 0 0 23.5 12.03C23.5 5.74 18.27.5 12 .5Z"/></svg>
+      </a>
+      <a href="LINKEDIN_URL_HERE" target="_blank" rel="noopener" class="icon-btn" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+      </a>
+      <a href="resume/Hamshika_Radhakrishnan_Resume.pdf" download class="btn btn-sm btn-primary">Resume</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#research" class="mobile-link">Research</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <div class="mobile-menu-actions">
+      <a href="https://github.com/Hamshika06" target="_blank" rel="noopener" class="btn btn-sm btn-outline">GitHub</a>
+      <a href="resume/Hamshika_Radhakrishnan_Resume.pdf" download class="btn btn-sm btn-primary">Resume</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+  <canvas id="networkCanvas" class="network-canvas" aria-hidden="true"></canvas>
+  <div class="hero-grid-overlay" aria-hidden="true"></div>
+
+  <div class="section-inner hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>M.S. Data Science &middot; University of Maryland</p>
+      <h1 class="hero-name">Hamshika Radhakrishnan</h1>
+      <h2 class="hero-headline">Building intelligent systems at the intersection of <span class="accent">Data</span>, <span class="accent">AI</span> &amp; Research.</h2>
+      <p class="hero-sub">I'm an M.S. Data Science student at the University of Maryland focused on machine learning, generative AI, agentic systems, and applied research.</p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="resume/Hamshika_Radhakrishnan_Resume.pdf" download class="btn btn-outline">Download Resume</a>
+      </div>
+
+      <div class="hero-social">
+        <a href="https://github.com/Hamshika06" target="_blank" rel="noopener" class="hero-social-link">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.03c0 5.03 3.26 9.29 7.79 10.8.57.1.78-.25.78-.55 0-.27-.01-1.15-.02-2.09-3.17.69-3.84-1.36-3.84-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.05-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.16a10.9 10.9 0 0 1 5.72 0c2.18-1.47 3.14-1.16 3.14-1.16.62 1.57.23 2.73.11 3.02.73.79 1.17 1.81 1.17 3.05 0 4.37-2.67 5.34-5.21 5.62.41.36.77 1.06.77 2.14 0 1.54-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.53 10.53 0 0 0 23.5 12.03C23.5 5.74 18.27.5 12 .5Z"/></svg>
+          GitHub
+        </a>
+        <a href="LINKEDIN_URL_HERE" target="_blank" rel="noopener" class="hero-social-link">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+          LinkedIn
+        </a>
+        <a href="#contact" class="hero-social-link">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h18v14H3V5Z"/><path d="m3 6 9 7 9-7"/></svg>
+          Contact Me
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-portrait">
+      <div class="portrait-frame">
+        <img src="images/profile.jpeg" alt="Hamshika Radhakrishnan" class="portrait-img" onerror="this.parentElement.classList.add('portrait-fallback')" />
+        <div class="portrait-placeholder">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.5 3.5-6 8-6s8 2.5 8 6"/></svg>
+          <span>PROFILE_IMAGE_HERE</span>
+        </div>
+      </div>
+      <div class="portrait-grid" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-cue" aria-label="Scroll down">
+    <span></span>
+  </a>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section about">
+  <div class="section-inner">
+    <p class="section-kicker">01 &middot; About</p>
+    <h2 class="section-title">Who I am</h2>
+
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>I enjoy solving complex problems with data &mdash; the kind that don't have a clean answer until you've spent real time inside the numbers. I like understanding how models work rather than treating them as black boxes, which is what pulled me toward research alongside engineering.</p>
+        <p>I'm interested in both the theoretical and applied sides of machine learning: reading the paper, then building the system it describes. Recently that's meant working on generative AI and agentic systems &mdash; architectures where LLMs reason, retrieve, and act rather than just generate text.</p>
+        <p>I enjoy moving from research ideas to working systems, and building products end-to-end &mdash; from a raw dataset to something a user can actually touch.</p>
+      </div>
+
+      <div class="about-flow">
+        <p class="flow-label">My process</p>
+        <ol class="flow-steps">
+          <li><span class="flow-num">01</span><span>Curiosity</span></li>
+          <li><span class="flow-num">02</span><span>Data</span></li>
+          <li><span class="flow-num">03</span><span>Modeling</span></li>
+          <li><span class="flow-num">04</span><span>Experimentation</span></li>
+          <li><span class="flow-num">05</span><span>Deployment</span></li>
+          <li><span class="flow-num">06</span><span>Impact</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="education-grid">
+      <div class="edu-card">
+        <div class="edu-top">
+          <span class="edu-school">University of Maryland, College Park</span>
+          <span class="edu-gpa">GPA 4.0 / 4.0</span>
+        </div>
+        <p class="edu-degree">M.S. Data Science</p>
+        <p class="edu-dates">August 2025 &ndash; May 2027</p>
+        <div class="chip-row">
+          <span class="mini-chip">Data Science</span>
+          <span class="mini-chip">Machine Learning</span>
+          <span class="mini-chip">NLP</span>
+          <span class="mini-chip">Agentic AI</span>
+          <span class="mini-chip">Statistics</span>
+          <span class="mini-chip">Generative AI</span>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-top">
+          <span class="edu-school">VIT Chennai</span>
+          <span class="edu-gpa">GPA 3.8 / 4.0</span>
+        </div>
+        <p class="edu-degree">B.Tech Computer Science &amp; Engineering &mdash; AI/ML</p>
+        <p class="edu-dates">August 2021 &ndash; June 2025</p>
+        <div class="chip-row">
+          <span class="mini-chip">AI/ML</span>
+          <span class="mini-chip">Computer Science</span>
+          <span class="mini-chip">Algorithms</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="section experience">
+  <div class="section-inner">
+    <p class="section-kicker">02 &middot; Experience</p>
+    <h2 class="section-title">What I've worked on</h2>
+
+    <div class="timeline" id="experienceTimeline"></div>
+  </div>
+</section>
+
+<!-- ================= RESEARCH ================= -->
+<section id="research" class="section research">
+  <div class="research-bg" aria-hidden="true">
+    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="rgrad" cx="50%" cy="30%" r="80%">
+          <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.16"/>
+          <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="800" height="600" fill="url(#rgrad)"/>
+      <g id="researchNodes" stroke="var(--accent)" stroke-opacity="0.35" fill="none"></g>
+    </svg>
+  </div>
+
+  <div class="section-inner">
+    <p class="section-kicker">03 &middot; Research</p>
+    <h2 class="section-title">What I'm exploring academically</h2>
+
+    <div class="research-card">
+      <div class="research-card-head">
+        <span class="research-tag">Research Assistant</span>
+        <span class="research-dates">May 2026 &ndash; Present</span>
+      </div>
+      <h3 class="research-title">University of Maryland &mdash; Deep Learning for Groundwater / Hydrology</h3>
+      <p class="research-project">GRACE Terrestrial Water Storage Downscaling</p>
+
+      <div class="research-body">
+        <p>Developed a Monte Carlo Dropout BiLSTM model in TensorFlow to downscale GRACE terrestrial water storage data from approximately 1&deg; to 0.25&deg; resolution, working with data spanning 2002&ndash;2022 across roughly 710 grid cells.</p>
+        <ul class="research-list">
+          <li>Generated 175K+ grid-month estimates and reconstructed 1,451 missing observations</li>
+          <li>Used Monte Carlo Dropout for uncertainty estimation, achieving strong agreement with GRACE observations</li>
+          <li>Investigated drought-related indicators such as SPEI-12</li>
+          <li>Compared model predictions against groundwater well observations</li>
+        </ul>
+      </div>
+
+      <div class="research-metrics">
+        <div class="r-metric"><span class="r-metric-value">1&deg; &rarr; 0.25&deg;</span><span class="r-metric-label">spatial downscaling</span></div>
+        <div class="r-metric"><span class="r-metric-value">175K+</span><span class="r-metric-label">grid-month estimates</span></div>
+        <div class="r-metric"><span class="r-metric-value">710</span><span class="r-metric-label">grid cells modeled</span></div>
+        <div class="r-metric"><span class="r-metric-value">2002&ndash;2022</span><span class="r-metric-label">study period</span></div>
+      </div>
+    </div>
+
+    <!-- Featured ongoing research direction -->
+    <div class="research-card research-card-featured">
+      <div class="research-card-head">
+        <span class="research-tag research-tag-alt">Ongoing Research Direction</span>
+      </div>
+      <h3 class="research-title">Learning Hydrogeologic Connectivity with Graph Neural Networks</h3>
+      <div class="research-body">
+        <p>Groundwater monitoring networks often contain spatial and temporal data gaps. This direction explores learning relationships between wells using spatial characteristics, aquifer characteristics, well characteristics, groundwater-level time series, and temporal relationships.</p>
+        <p>The longer-term idea is to combine <strong>Graph Neural Networks</strong>, <strong>uncertainty estimation</strong>, and <strong>active learning</strong> to identify locations where an additional groundwater observation would provide the most information.</p>
+      </div>
+      <div class="chip-row">
+        <span class="mini-chip">Graph Neural Networks</span>
+        <span class="mini-chip">Uncertainty Estimation</span>
+        <span class="mini-chip">Active Learning</span>
+        <span class="mini-chip">Hydrogeology</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section projects">
+  <div class="section-inner">
+    <p class="section-kicker">04 &middot; Projects</p>
+    <h2 class="section-title">What I've actually built</h2>
+
+    <div class="filter-row" id="filterRow"></div>
+
+    <div class="project-grid" id="projectGrid"></div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section skills">
+  <div class="section-inner">
+    <p class="section-kicker">05 &middot; Skills</p>
+    <h2 class="section-title">Technical expertise</h2>
+
+    <div class="skills-grid" id="skillsGrid"></div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section contact">
+  <div class="section-inner contact-inner">
+    <p class="section-kicker">06 &middot; Contact</p>
+    <h2 class="section-title contact-title">Let's build something intelligent.</h2>
+    <p class="contact-sub">I'm open to AI/ML opportunities, data science roles, research collaborations, and GenAI / agentic AI projects. If you're working on something interesting, I'd like to hear about it.</p>
+
+    <div class="contact-actions">
+      <a href="mailto:YOUR_EMAIL_HERE" class="btn btn-primary btn-lg">Email Me</a>
+      <a href="https://github.com/Hamshika06" target="_blank" rel="noopener" class="btn btn-outline btn-lg">GitHub</a>
+      <a href="LINKEDIN_URL_HERE" target="_blank" rel="noopener" class="btn btn-outline btn-lg">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <p>&copy; <span id="year"></span> Hamshika Radhakrishnan. Built from scratch.</p>
+    <div class="footer-links">
+      <a href="https://github.com/Hamshika06" target="_blank" rel="noopener">GitHub</a>
+      <a href="LINKEDIN_URL_HERE" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:YOUR_EMAIL_HERE">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
