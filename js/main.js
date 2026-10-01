@@ -217,13 +217,13 @@ function initNetworkCanvas() {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   let width, height, nodes;
-  const NODE_COUNT_BASE = 55;
+  const NODE_COUNT_BASE = 90;
 
   function resize() {
     const hero = canvas.parentElement;
     width = canvas.width = hero.offsetWidth;
     height = canvas.height = hero.offsetHeight;
-    const count = Math.max(24, Math.min(NODE_COUNT_BASE, Math.floor((width * height) / 22000)));
+    const count = Math.max(42, Math.min(NODE_COUNT_BASE, Math.floor((width * height) / 15000)));
     nodes = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -262,7 +262,7 @@ function initNetworkCanvas() {
     for (const n of nodes) {
       ctx.fillStyle = `rgba(${accent}, 0.5)`;
       ctx.beginPath();
-      ctx.arc(n.x, n.y, 1.6, 0, Math.PI * 2);
+      ctx.arc(n.x, n.y, 2, 0, Math.PI * 2);
       ctx.fill();
     }
 
