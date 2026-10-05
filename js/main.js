@@ -109,7 +109,7 @@ function renderExperience() {
 
         <div class="timeline-projects">
           ${job.projects.map((p, idx) => `
-            <details class="exp-detail" ${idx === 0 ? "open" : ""}>
+            <details class="exp-detail" open>
               <summary>
                 <span>${p.title}</span>
                 <svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>

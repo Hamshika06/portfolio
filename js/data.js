@@ -8,7 +8,7 @@ const EXPERIENCE = [
     logo: "images/openlane-logo.png",
     summary:
       "Worked on real-world machine learning and analytics problems spanning B2B vehicle recommendation, dealer segmentation, and credit risk modeling.",
-    stack: ["Python", "SQL", "Snowflake", "Snowpark", "dbt", "Tableau", "GitHub"],
+    stack: ["Python", "TensorFlow", "SQL", "Snowflake", "Snowpark", "dbt", "Tableau", "GitHub"],
     projects: [
       {
         title: "Dealer Vehicle Recommendation System",
@@ -36,6 +36,34 @@ const EXPERIENCE = [
           "Evaluated model performance using precision and recall, benchmarked against the incumbent model",
         ],
         metrics: [],
+      },
+    ],
+  },
+  {
+    company: "Jocata Financial Advisory & Technology",
+    role: "Data Science Intern",
+    dates: "Sep 2022 – Dec 2022",
+    location: "Hyderabad, India",
+    logo: "images/jocata-logo.png",
+    summary:
+      "Built a computer vision pipeline that reads customer identity cards and documents, extracts the text, and automates customer application filings.",
+    stack: ["Python", "TensorFlow", "PyTorch", "CUDA", "Computer Vision", "OCR", "Tableau"],
+    projects: [
+      {
+        title: "Identity Card Information Extraction",
+        points: [
+          "Built an image-processing pipeline for customer identity cards and documents, detecting text regions and extracting their contents to automate customer application filings",
+          "Designed and trained an SSD-ResNet object detection model in TensorFlow and PyTorch, owning preprocessing, feature engineering, loss selection, and hyperparameter tuning",
+          "Processed identity cards for 5,000+ customers, reaching 92%+ accuracy on text detection and extraction",
+          "Optimized training and inference with CUDA and GPU parallelism on NVIDIA hardware, reducing latency by 30%",
+          "Built ETL and preprocessing pipelines for large-scale, noisy image inputs",
+          "Communicated model performance and extraction results to business and engineering stakeholders through Tableau visualizations and reports",
+        ],
+        metrics: [
+          { value: "92%+", label: "text detection and extraction accuracy" },
+          { value: "5K+", label: "customers' identity cards processed" },
+          { value: "30%", label: "reduced latency with CUDA and GPUs" },
+        ],
       },
     ],
   },
