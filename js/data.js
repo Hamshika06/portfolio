@@ -132,7 +132,6 @@ const PROJECTS = [
     ],
     tags: ["Agentic AI", "LLM"],
     github: "GITHUB_URL_HERE",
-    demo: "LIVE_DEMO_URL_HERE",
     featured: true,
   },
   {
@@ -150,7 +149,6 @@ const PROJECTS = [
     ],
     tags: ["Agentic AI", "LLM", "NLP"],
     github: "GITHUB_URL_HERE",
-    demo: null,
   },
   {
     id: "echo-of-hands",
@@ -167,23 +165,6 @@ const PROJECTS = [
     ],
     tags: ["Computer Vision", "Deep Learning"],
     github: "GITHUB_URL_HERE",
-    demo: "LIVE_DEMO_URL_HERE",
-  },
-  {
-    id: "jocata",
-    name: "Jocata — Identity Card Information Extraction",
-    tagline: "A deep learning computer vision system for extracting information from identity cards for banking applications.",
-    problem:
-      "Manual identity verification is slow and error-prone. This system automates field extraction from ID cards using object detection, tuned for banking-grade accuracy and latency.",
-    tech: ["PyTorch", "TensorFlow", "CUDA", "Computer Vision", "OCR"],
-    details: [
-      "Used SSD/ResNet-based object detection for field localization",
-      "Achieved approximately 92% performance on evaluation",
-      "Used GPU acceleration to reduce inference latency by approximately 30%",
-    ],
-    tags: ["Computer Vision", "Deep Learning"],
-    github: "GITHUB_URL_HERE",
-    demo: null,
   },
   {
     id: "midi-generation",
@@ -199,26 +180,6 @@ const PROJECTS = [
     ],
     tags: ["Deep Learning"],
     github: "GITHUB_URL_HERE",
-    demo: null,
-  },
-  {
-    id: "hydrogeologic-gnn",
-    name: "Learning Hydrogeologic Connectivity with Graph Neural Networks",
-    tagline: "Ongoing research exploring GNNs to model relationships between groundwater monitoring wells.",
-    problem:
-      "Groundwater monitoring networks often contain spatial and temporal data gaps. This direction learns relationships between wells using spatial, aquifer, and well characteristics alongside groundwater-level time series.",
-    tech: ["Graph Neural Networks", "Uncertainty Estimation", "Active Learning", "Python"],
-    details: [
-      "Modeling spatial, aquifer, and well characteristics as graph structure",
-      "Incorporating groundwater-level time series and temporal relationships",
-      "Long-term goal: combine GNNs, uncertainty estimation, and active learning",
-      "Aim: identify where an additional observation would be most informative",
-    ],
-    tags: ["Research", "Deep Learning"],
-    github: null,
-    demo: null,
-    ongoing: true,
-    featured: true,
   },
 ];
 
@@ -250,4 +211,4 @@ const SKILLS = [
   },
 ];
 
-const FILTER_TAGS = ["All", "Agentic AI", "LLM", "Computer Vision", "NLP", "Deep Learning", "Research"];
+const FILTER_TAGS = ["All", "Agentic AI", "LLM", "Computer Vision", "NLP", "Deep Learning"];
