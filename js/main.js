@@ -88,18 +88,20 @@ function renderExperience() {
   const wrap = $("#experienceTimeline");
   wrap.innerHTML = EXPERIENCE.map((job, i) => `
     <div class="timeline-item">
-      <div class="timeline-marker"><span></span></div>
       <div class="timeline-card">
         <div class="timeline-head">
           <div>
             <h3 class="timeline-role">${job.role}</h3>
             <p class="timeline-company">${job.company}</p>
           </div>
-          <span class="timeline-dates">${job.dates}</span>
+          <div class="timeline-meta">
+            <span class="timeline-dates"><svg class="meta-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>${job.dates}</span>
+            ${job.location ? `<span class="timeline-location"><svg class="meta-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>${job.location}</span>` : ""}
+          </div>
         </div>
         <p class="timeline-summary">${job.summary}</p>
         <div class="chip-row">
-          ${job.stack.map((s) => `<span class="mini-chip">${s}</span>`).join("")}
+          ${job.stack.map((s) => `<span class="mini-chip stack-chip">${s}</span>`).join("")}
         </div>
 
         <div class="timeline-projects">

@@ -2,33 +2,37 @@
 const EXPERIENCE = [
   {
     company: "OPENLANE / Automotive Finance Corporation (AFC)",
-    role: "Data Scientist / BI Analyst Intern",
+    role: "Data Science Intern",
     dates: "June 2026 – August 2026",
+    location: "Carmel, Indianapolis",
     summary:
       "Worked on real-world machine learning and analytics problems spanning B2B vehicle recommendation, dealer segmentation, and credit risk modeling.",
-    stack: ["Python", "SQL", "Snowflake", "Snowpark", "dbt"],
+    stack: ["Python", "SQL", "Snowflake", "Snowpark", "dbt", "Tableau", "GitHub"],
     projects: [
       {
         title: "Dealer Vehicle Recommendation System",
         points: [
+          "Generated recommendations for 15,000+ dealers from a corpus of 200,000+ vehicles on the OPENLANE marketplace",
           "Built a B2B vehicle recommender using Snowflake notebooks with feature engineering and similarity modeling",
           "Incorporated Snowflake Cortex embeddings to build dealer similarity representations",
           "Addressed cold-start dealers using postal-code and credit-tier based lookalikes",
           "Integrated live dealer bidding and purchase information into scoring",
-          "Used dbt and GitHub for production workflows",
+          "Managed production workflows with dbt and GitHub, and used Tableau to show the recommender's performance to business stakeholders",
+          "Pushed the recommender to production, where it now runs in production",
         ],
         metrics: [
-          { value: "~20%", label: "precision improvement" },
-          { value: "15min → 5min", label: "runtime (~67% faster)" },
+          { value: "70%+", label: "reduced latency" },
+          { value: "15K+", label: "dealers with generated recommendations" },
+          { value: "↑ Bids & purchases", label: "increase in bid and purchase rates" },
         ],
       },
       {
         title: "Dealer Credit Risk Scorecard",
         points: [
-          "Built a Logistic Regression model for dealer credit-line approval",
-          "Used time-based train/test splits to reflect production conditions",
-          "Evaluated performance with precision and recall",
-          "Benchmarked against the incumbent approach",
+          "Performed EDA, preprocessing, and feature engineering on dealer financial and lot-level data",
+          "Built a Logistic Regression model to predict dealer credit risk scores and used the scorecard_generator Python library to generate interpretable risk scorecards",
+          "Identified the key features driving each dealer's risk score and automated credit-line approval, rejection, or manual review decisions",
+          "Evaluated model performance using precision and recall, benchmarked against the incumbent model",
         ],
         metrics: [],
       },
