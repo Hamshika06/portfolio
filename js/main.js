@@ -84,9 +84,9 @@ function observeReveal(el) {
 // ============================================================
 // Render: Experience timeline
 // ============================================================
-function renderExperience() {
-  const wrap = $("#experienceTimeline");
-  wrap.innerHTML = EXPERIENCE.map((job, i) => `
+function renderJobs(list, selector) {
+  const wrap = $(selector);
+  wrap.innerHTML = list.map((job, i) => `
     <div class="timeline-item">
       <div class="timeline-card">
         <div class="timeline-head">
@@ -111,7 +111,8 @@ function renderExperience() {
           ${job.projects.map((p, idx) => `
             <details class="exp-detail" open>
               <summary>
-                <span>${p.title}</span>
+                <span class="exp-detail-title">${p.title}</span>
+                ${p.dates ? `<span class="exp-detail-date"><svg class="meta-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>${p.dates}</span>` : ""}
                 <svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
               </summary>
               <ul class="exp-points">
@@ -306,7 +307,8 @@ function initResearchNodes() {
 // ============================================================
 // Init
 // ============================================================
-renderExperience();
+renderJobs(EXPERIENCE, "#experienceTimeline");
+renderJobs(RESEARCH, "#researchTimeline");
 renderFilters();
 renderProjects();
 renderSkills();

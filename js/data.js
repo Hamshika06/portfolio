@@ -69,6 +69,51 @@ const EXPERIENCE = [
   },
 ];
 
+// ===================== RESEARCH =====================
+const RESEARCH = [
+  {
+    company: "College of Agriculture and Natural Resources, University of Maryland",
+    role: "Research Assistant",
+    dates: "May 2026 – Present",
+    location: "College Park, Maryland",
+    logo: "images/umd-logo.png",
+    summary:
+      "Applying data analysis, machine learning and deep learning techniques to groundwater and hydrology problems, from downscaling satellite water storage data to learning how groundwater wells relate to each other not only by distance but by hydrological features.",
+    stack: ["Python", "TensorFlow", "BiLSTM", "Monte Carlo Dropout", "Graph Neural Networks", "Uncertainty Estimation", "Active Learning"],
+    projects: [
+      {
+        title: "GRACE Terrestrial Water Storage Downscaling",
+        dates: "May 2026 – July 2026",
+        points: [
+          "Reviewed and reproduced an ongoing research paper",
+          "Developed a Monte Carlo Dropout BiLSTM model in TensorFlow to downscale GRACE terrestrial water storage data from approximately 1° to 0.25° resolution",
+          "Worked with data spanning 2002–2022 across roughly 710 grid cells",
+          "Generated 175K+ grid-month estimates and reconstructed 1,451 missing observations",
+          "Used Monte Carlo Dropout for uncertainty estimation, achieving strong agreement with GRACE observations",
+          "Investigated drought-related indicators such as SPEI-12",
+          "Compared model predictions against groundwater well observations",
+        ],
+        metrics: [
+          { value: "1° → 0.25°", label: "spatial downscaling" },
+          { value: "175K+", label: "grid-month estimates" },
+          { value: "710", label: "grid cells modeled" },
+          { value: "2002–2022", label: "study period" },
+        ],
+      },
+      {
+        title: "Learning Hydrogeologic Connectivity with Graph Neural Networks (Ongoing Research Direction)",
+        dates: "Sep 2026 – Present",
+        points: [
+          "Groundwater monitoring networks often contain spatial and temporal data gaps; this direction explores learning relationships between wells",
+          "Using spatial characteristics, aquifer characteristics, well characteristics, groundwater-level time series, and temporal relationships",
+          "Combining Graph Neural Networks, uncertainty estimation, and active learning to identify where an additional groundwater observation would provide the most information, and to predict the groundwater level in that aquifer or well",
+        ],
+        metrics: [],
+      },
+    ],
+  },
+];
+
 // ===================== PROJECTS =====================
 // tags used for filtering: LLM, Agentic AI, RAG, Computer Vision, NLP, Deep Learning, Research
 const PROJECTS = [
