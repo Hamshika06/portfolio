@@ -14,12 +14,10 @@ const EXPERIENCE = [
         title: "Dealer Vehicle Recommendation System",
         points: [
           "Generated recommendations for 15,000+ dealers from a corpus of 200,000+ vehicles on the OPENLANE marketplace",
-          "Built a B2B vehicle recommender using Snowflake notebooks with feature engineering and similarity modeling",
-          "Incorporated Snowflake Cortex embeddings to build dealer similarity representations",
-          "Addressed cold-start dealers using postal-code and credit-tier based lookalikes",
-          "Integrated live dealer bidding and purchase information into scoring",
-          "Managed production workflows with dbt and GitHub, and used Tableau to show the recommender's performance to business stakeholders",
-          "Pushed the recommender to production, where it now runs in production",
+          "Built a B2B vehicle recommender in Snowflake notebooks using feature engineering, similarity modeling, and Snowflake Cortex embeddings for dealer similarity",
+          "Addressed cold-start dealers with postal-code and credit-tier based lookalikes, and integrated live dealer bidding and purchase data into scoring",
+          "Pushed the recommender to production using dbt and GitHub workflows, where it now runs",
+          "Used Tableau to show the recommender's performance to business stakeholders",
         ],
         metrics: [
           { value: "70%+", label: "reduced latency" },
@@ -56,8 +54,7 @@ const EXPERIENCE = [
           "Designed and trained an SSD-ResNet object detection model in TensorFlow and PyTorch, owning preprocessing, feature engineering, loss selection, and hyperparameter tuning",
           "Processed identity cards for 5,000+ customers, reaching 92%+ accuracy on text detection and extraction",
           "Optimized training and inference with CUDA and GPU parallelism on NVIDIA hardware, reducing latency by 30%",
-          "Built ETL and preprocessing pipelines for large-scale, noisy image inputs",
-          "Communicated model performance and extraction results to business and engineering stakeholders through Tableau visualizations and reports",
+          "Built ETL and preprocessing pipelines for large-scale, noisy image inputs and presented model performance to business and engineering stakeholders through Tableau reports",
         ],
         metrics: [
           { value: "92%+", label: "text detection and extraction accuracy" },
