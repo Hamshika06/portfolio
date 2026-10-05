@@ -90,9 +90,12 @@ function renderExperience() {
     <div class="timeline-item">
       <div class="timeline-card">
         <div class="timeline-head">
-          <div>
-            <h3 class="timeline-role">${job.role}</h3>
-            <p class="timeline-company">${job.company}</p>
+          <div class="timeline-title">
+            ${job.logo ? `<img class="company-logo" src="${job.logo}" alt="" width="52" height="52" />` : ""}
+            <div>
+              <h3 class="timeline-role">${job.role}</h3>
+              <p class="timeline-company">${job.company}</p>
+            </div>
           </div>
           <div class="timeline-meta">
             <span class="timeline-dates"><svg class="meta-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>${job.dates}</span>

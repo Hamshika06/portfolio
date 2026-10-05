@@ -5,6 +5,7 @@ const EXPERIENCE = [
     role: "Data Science Intern",
     dates: "June 2026 – August 2026",
     location: "Carmel, Indianapolis",
+    logo: "images/openlane-logo.png",
     summary:
       "Worked on real-world machine learning and analytics problems spanning B2B vehicle recommendation, dealer segmentation, and credit risk modeling.",
     stack: ["Python", "SQL", "Snowflake", "Snowpark", "dbt", "Tableau", "GitHub"],
