@@ -662,7 +662,7 @@ svg { display: block; }
 }
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: var(--border-strong);
+  border-color: rgba(var(--accent-rgb), 0.8);
   box-shadow: var(--shadow-lg);
 }
 .project-card-featured {
@@ -685,7 +685,8 @@ svg { display: block; }
   font-weight: 700;
 }
 
-.project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.project-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+.project-tags { display: flex; gap: 8px; flex-wrap: wrap; }
 .project-tag {
   font-size: 0.7rem;
   font-weight: 700;
@@ -696,41 +697,38 @@ svg { display: block; }
   padding: 4px 10px;
   border-radius: 6px;
 }
+.project-year { font-family: var(--mono); font-size: 0.85rem; font-weight: 600; color: var(--text-dim); }
 
-.project-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
-.project-tagline { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; margin-bottom: 18px; }
+.project-name { font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+.project-description { color: var(--text-dim); font-size: 0.93rem; line-height: 1.65; margin-bottom: 22px; }
 
-.project-problem {
-  background: var(--bg-alt);
-  border-radius: var(--radius-sm);
-  padding: 14px 16px;
-  margin-bottom: 18px;
+.project-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 22px; }
+.project-stat { display: flex; flex-direction: column; gap: 4px; padding-left: 12px; border-left: 2px solid rgba(var(--accent-rgb), 0.45); min-width: 0; }
+.project-stat-value { font-family: var(--mono); font-size: 1.2rem; font-weight: 700; color: var(--accent); line-height: 1.2; overflow-wrap: anywhere; }
+@media (max-width: 520px) {
+  .project-stats { grid-template-columns: 1fr; gap: 12px; }
 }
-.project-label {
-  display: block;
-  font-family: var(--mono);
-  font-size: 0.68rem;
+.project-stat-label { font-size: 0.78rem; color: var(--text-dim); line-height: 1.35; }
+
+.project-tech { margin-bottom: 22px; gap: 8px; }
+.project-tech .mini-chip-mono {
+  font-size: 0.72rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-faint);
-  margin-bottom: 6px;
-}
-.project-problem p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; }
-
-.project-details { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
-.project-details li {
-  position: relative; padding-left: 18px;
-  font-size: 0.88rem; line-height: 1.55; color: var(--text-dim);
-}
-.project-details li::before {
-  content: "";
-  position: absolute; left: 0; top: 8px;
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--accent);
+  letter-spacing: 0.04em;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 6px 10px;
+  border-color: var(--border-strong);
+  background: transparent;
 }
 
-.project-tech { margin-bottom: 24px; }
-.project-actions { display: flex; gap: 10px; margin-top: auto; }
+.project-actions { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border); }
+.project-link { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 0.95rem; color: var(--text); transition: color 0.2s ease; }
+.project-link:hover { color: var(--accent); }
+.project-link-arrow { transition: transform 0.2s ease; }
+.project-link:hover .project-link-arrow { transform: translate(2px, -2px); }
+.project-link-disabled { color: var(--text-faint); font-weight: 500; font-size: 0.85rem; }
 
 /* ============================================================
    Skills

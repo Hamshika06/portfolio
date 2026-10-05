@@ -115,71 +115,127 @@ const RESEARCH = [
 ];
 
 // ===================== PROJECTS =====================
-// tags used for filtering: LLM, Agentic AI, RAG, Computer Vision, NLP, Deep Learning, Research
+// scope tags (used for filtering): Machine Learning, Deep Learning, GenAI, Agentic AI, Core NLP
 const PROJECTS = [
   {
     id: "alta",
-    name: "ALTA — AI Risk & Route Intelligence",
-    tagline: "A multi-agent AI system for intelligent route and risk analysis.",
-    problem:
-      "Route planning and risk assessment for logistics decisions typically rely on static rules. ALTA uses an LLM-driven multi-agent workflow to reason over route data and produce explainable risk scores.",
-    tech: ["LangGraph", "GPT-4o", "FastAPI", "React", "Leaflet", "Recharts", "Python"],
-    details: [
-      "Built an 8-node LangGraph workflow orchestrating specialized reasoning agents",
-      "Used LLM-based reasoning to generate risk scores from 0–100",
-      "Evaluated 900+ routes with compliance-oriented logging",
-      "Built a full-stack frontend/backend architecture (React + FastAPI)",
+    name: "ALTA — Adaptive Logistics and Tracking Agent",
+    year: "2026",
+    scope: ["Agentic AI", "GenAI"],
+    description:
+      "A real-time agentic AI platform for pharmaceutical cold-chain monitoring. An 8-node LangGraph pipeline powered by GPT-4o scores shipment risk and recommends actions, with human approval at every step.",
+    highlights: [
+      { value: "8", label: "LangGraph nodes" },
+      { value: "900+", label: "cargo routes evaluated" },
+      { value: "0–100", label: "dynamic risk score" },
     ],
-    tags: ["Agentic AI", "LLM"],
-    github: "GITHUB_URL_HERE",
-    featured: true,
+    tech: ["Python", "LangGraph", "LangChain", "GPT-4o", "FastAPI", "React", "TypeScript", "Leaflet", "Recharts"],
+    github: "https://github.com/Hamshika06/Cargo-Monitoring",
+  },
+  {
+    id: "geomagnetic-storm",
+    name: "Geomagnetic Storm Early-Warning System",
+    year: "2026",
+    scope: ["Machine Learning"],
+    description:
+      "An end-to-end MLOps system that forecasts geomagnetic storms (Kp ≥ 5) three hours ahead. Trained on NASA OMNI2 history and served live from NOAA solar-wind feeds, with drift monitoring.",
+    highlights: [
+      { value: "228K+", label: "hourly observations" },
+      { value: "3 hr", label: "advance warning" },
+      { value: "Live", label: "NOAA inference" },
+    ],
+    tech: ["Python", "Scikit-learn", "XGBoost", "LightGBM", "MLflow", "DVC", "FastAPI", "Docker", "GitHub Actions", "Evidently AI"],
+    github: "https://github.com/Hamshika06/Project-Machine_Learning_System",
   },
   {
     id: "coincoach",
     name: "CoinCoach — Personal Finance AI Agent",
-    tagline: "An agentic AI application that helps users understand their financial situation and goals.",
-    problem:
-      "Personal finance conversations are unstructured. CoinCoach extracts structured financial information from natural language and produces an inspectable, structured assessment.",
-    tech: ["Python", "LangChain", "Gemini", "Pydantic", "Agent workflows"],
-    details: [
-      "Extracts structured financial information from natural language",
-      "Identifies missing information and detects contradictions",
-      "Evaluates savings goals against stated financial context",
-      "Produces structured financial assessments with inspectable reasoning traces",
+    year: "2026",
+    scope: ["Agentic AI", "GenAI"],
+    description:
+      "An agentic AI app that turns a user's own words into a structured view of their finances. It flags missing details and contradictions, evaluates savings goals, and shows its reasoning.",
+    highlights: [
+      { value: "Structured", label: "financial extraction" },
+      { value: "Conflicts", label: "contradictions detected" },
+      { value: "Traceable", label: "reasoning traces" },
     ],
-    tags: ["Agentic AI", "LLM", "NLP"],
-    github: "GITHUB_URL_HERE",
+    tech: ["Python", "LangChain", "Gemini", "Pydantic"],
+    github: "https://github.com/Hamshika06/CoinCoach",
+  },
+  {
+    id: "inkwell",
+    name: "Inkwell — Privacy Policy Clause Classifier",
+    year: "2026",
+    scope: ["Core NLP", "Deep Learning", "Machine Learning"],
+    description:
+      "An NLP system that classifies privacy-policy clauses into fixed categories and ties every label to the exact clause behind it. Missing categories are reported as gaps, with no generative model involved.",
+    highlights: [
+      { value: "0.80", label: "micro F1, RoBERTa-base" },
+      { value: "3", label: "models compared" },
+      { value: "0", label: "LLM APIs used" },
+    ],
+    tech: ["Python", "DistilBERT", "RoBERTa", "TF-IDF", "SVM"],
+    github: "https://github.com/Hamshika06/Inkwell",
+  },
+  {
+    id: "conversational-diagram-designer",
+    name: "Conversational Diagram Designer",
+    year: "2026",
+    scope: ["GenAI", "Agentic AI"],
+    description:
+      "A browser tool that turns plain-language requests into Graphviz, Mermaid, or PlantUML diagrams. A vision-feedback loop checks the rendered image and corrects it.",
+    highlights: [
+      { value: "3", label: "diagram formats" },
+      { value: "3", label: "self-correction passes" },
+      { value: "3", label: "LLM providers" },
+    ],
+    tech: ["Python", "FastAPI", "React", "Vite", "Gemini", "Graphviz", "Mermaid", "PlantUML", "Docker"],
+    github: "https://github.com/Hamshika06/Conversational-Diagram-Designer",
   },
   {
     id: "echo-of-hands",
     name: "Echo of Hands",
-    tagline: "A computer vision system that converts hand gestures into voice and text.",
-    problem:
-      "Sign and gesture-based communication needs low-latency, accessible interfaces. This project runs gesture recognition entirely client-side for accessible human-computer interaction.",
-    tech: ["Computer Vision", "Neural Networks", "JavaScript", "Machine Learning"],
-    details: [
-      "Recognizes approximately 18 hand signs",
-      "Trained on approximately 2,470 samples",
-      "Achieved approximately 97.9% accuracy",
-      "Uses client-side inference for accessible, low-latency interaction",
+    year: "2024",
+    scope: ["Machine Learning", "Deep Learning"],
+    description:
+      "A real-time hand-sign communication aid that recognises 18 signs from a webcam and speaks the matching phrase aloud. It runs entirely in the browser using MediaPipe hand landmarks.",
+    highlights: [
+      { value: "97.9%", label: "held-out accuracy" },
+      { value: "18", label: "hand signs" },
+      { value: "Client-side", label: "no uploads or server" },
     ],
-    tags: ["Computer Vision", "Deep Learning"],
-    github: "GITHUB_URL_HERE",
+    tech: ["Python", "TensorFlow", "MediaPipe", "OpenCV", "JavaScript", "Web Speech API"],
+    github: "https://github.com/Hamshika06/Echo-of-hands",
   },
   {
-    id: "midi-generation",
-    name: "MIDI Generation",
-    tagline: "A deep learning project exploring automatic music generation.",
-    problem:
-      "Symbolic music generation raises different modeling challenges than audio generation. This project compares generative architectures for sequence-based music composition.",
-    tech: ["GAN", "GRU", "VAE", "Transformer", "Jukebox"],
-    details: [
-      "Worked with 100+ MIDI files as training data",
-      "Explored GAN, GRU, VAE, Transformer, and Jukebox-style architectures",
-      "Developed sequence-based music generation models",
+    id: "vision-pass",
+    name: "VisionPass — ANPR Vehicle Entry Authorization",
+    year: "2025",
+    scope: ["Deep Learning", "Machine Learning"],
+    description:
+      "An ANPR system that reads Indian number plates with YOLOv11 and EasyOCR to authorize vehicle entry. Uncertain reads go to manual review, and every decision is logged.",
+    highlights: [
+      { value: "3", label: "access decisions" },
+      { value: "50", label: "YOLOv11 training epochs" },
+      { value: "Audit log", label: "timestamped decisions" },
     ],
-    tags: ["Deep Learning"],
-    github: "GITHUB_URL_HERE",
+    tech: ["Python", "YOLOv11", "EasyOCR", "OpenCV", "Flask"],
+    github: "https://github.com/Hamshika06/Vision-Pass",
+  },
+  {
+    id: "symphony-of-algorithms",
+    name: "Symphony of Algorithms",
+    year: "2024",
+    scope: ["Deep Learning", "GenAI"],
+    description:
+      "A comparison of GRU, LSTM, GAN, VAE, and GPT-2 Transformer models composing Pokémon-style music. All models train on one MIDI corpus and share the same metrics.",
+    highlights: [
+      { value: "307", label: "MIDI themes" },
+      { value: "31.6%", label: "best next-note accuracy" },
+      { value: "5", label: "models compared" },
+    ],
+    tech: ["Python", "PyTorch", "TensorFlow", "Keras", "Hugging Face", "GPT-2"],
+    github: "https://github.com/Hamshika06/Symphony-of-Algorithms",
   },
 ];
 
@@ -211,4 +267,4 @@ const SKILLS = [
   },
 ];
 
-const FILTER_TAGS = ["All", "Agentic AI", "LLM", "Computer Vision", "NLP", "Deep Learning"];
+const FILTER_TAGS = ["All", "Machine Learning", "Deep Learning", "GenAI", "Agentic AI", "Core NLP"];

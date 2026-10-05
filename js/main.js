@@ -135,38 +135,32 @@ function renderJobs(list, selector) {
 // ============================================================
 // Render: Projects + filtering
 // ============================================================
-function iconFor(tech) {
-  return tech;
-}
-
 function projectCardHTML(p) {
   return `
-    <article class="project-card ${p.featured ? "project-card-featured" : ""}" data-tags="${p.tags.join(",")}">
-      ${p.ongoing ? '<span class="project-badge">Ongoing Research</span>' : ""}
-      <div class="project-tags">
-        ${p.tags.map((t) => `<span class="project-tag">${t}</span>`).join("")}
+    <article class="project-card" data-tags="${p.scope.join(",")}">
+      <div class="project-top">
+        <div class="project-tags">
+          ${p.scope.map((t) => `<span class="project-tag">${t}</span>`).join("")}
+        </div>
+        <span class="project-year">${p.year}</span>
       </div>
       <h3 class="project-name">${p.name}</h3>
-      <p class="project-tagline">${p.tagline}</p>
+      <p class="project-description">${p.description}</p>
 
-      <div class="project-problem">
-        <span class="project-label">Problem</span>
-        <p>${p.problem}</p>
+      <div class="project-stats">
+        ${p.highlights.map((h) => `<div class="project-stat"><span class="project-stat-value">${h.value}</span><span class="project-stat-label">${h.label}</span></div>`).join("")}
       </div>
-
-      <ul class="project-details">
-        ${p.details.map((d) => `<li>${d}</li>`).join("")}
-      </ul>
 
       <div class="chip-row project-tech">
         ${p.tech.map((t) => `<span class="mini-chip mini-chip-mono">${t}</span>`).join("")}
       </div>
 
       <div class="project-actions">
-        ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.03c0 5.03 3.26 9.29 7.79 10.8.57.1.78-.25.78-.55 0-.27-.01-1.15-.02-2.09-3.17.69-3.84-1.36-3.84-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.05-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.16a10.9 10.9 0 0 1 5.72 0c2.18-1.47 3.14-1.16 3.14-1.16.62 1.57.23 2.73.11 3.02.73.79 1.17 1.81 1.17 3.05 0 4.37-2.67 5.34-5.21 5.62.41.36.77 1.06.77 2.14 0 1.54-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.53 10.53 0 0 0 23.5 12.03C23.5 5.74 18.27.5 12 .5Z"/></svg>
-          Code
-        </a>` : `<span class="btn btn-sm btn-outline btn-disabled">Code (soon)</span>`}
+        ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener" class="project-link">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.03c0 5.03 3.26 9.29 7.79 10.8.57.1.78-.25.78-.55 0-.27-.01-1.15-.02-2.09-3.17.69-3.84-1.36-3.84-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.05-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.16a10.9 10.9 0 0 1 5.72 0c2.18-1.47 3.14-1.16 3.14-1.16.62 1.57.23 2.73.11 3.02.73.79 1.17 1.81 1.17 3.05 0 4.37-2.67 5.34-5.21 5.62.41.36.77 1.06.77 2.14 0 1.54-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.53 10.53 0 0 0 23.5 12.03C23.5 5.74 18.27.5 12 .5Z"/></svg>
+          <span>View on GitHub</span>
+          <svg class="project-link-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>` : `<span class="project-link project-link-disabled">GitHub link coming soon</span>`}
       </div>
     </article>
   `;
@@ -174,7 +168,7 @@ function projectCardHTML(p) {
 
 function renderProjects(filter = "All") {
   const grid = $("#projectGrid");
-  const list = filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.tags.includes(filter));
+  const list = filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.scope.includes(filter));
   grid.innerHTML = list.map(projectCardHTML).join("");
   $$(".project-card", grid).forEach(observeReveal);
 }
