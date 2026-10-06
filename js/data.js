@@ -243,16 +243,16 @@ const SKILLS = [
     items: ["Python", "SQL", "R", "C++"],
   },
   {
+    category: "Data / Cloud",
+    items: ["Snowflake", "Snowpark", "dbt", "AWS", "PostgreSQL", "MySQL", "SQLite"],
+  },
+  {
     category: "Machine Learning",
     items: ["Scikit-learn", "XGBoost", "LightGBM", "TensorFlow", "PyTorch", "Keras"],
   },
   {
     category: "AI / GenAI",
     items: ["LangChain", "LangGraph", "Hugging Face", "RAG", "LLMs", "Agentic AI", "Embeddings", "LLM Evaluation"],
-  },
-  {
-    category: "Data / Cloud",
-    items: ["Snowflake", "Snowpark", "Snowflake Cortex", "dbt", "PostgreSQL", "MySQL", "SQLite"],
   },
   {
     category: "Deployment / Engineering",
