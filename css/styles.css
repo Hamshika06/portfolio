@@ -631,7 +631,27 @@ svg { display: block; }
 /* ============================================================
    Projects
    ============================================================ */
-.projects, .skills { padding-top: 60px; }
+.projects { padding-top: 60px; }
+.skills { padding-top: 30px; position: relative; overflow: hidden; }
+.skills > .section-inner { position: relative; z-index: 1; }
+
+.skills-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.skills-bg svg { position: absolute; inset: 0; display: block; overflow: visible; }
+.skills-bg .trace { fill: none; stroke: rgba(var(--accent-rgb), 0.16); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.skills-bg .trace-node { fill: var(--bg); stroke: rgba(var(--accent-rgb), 0.35); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.skills-bg .trace-pulse {
+  fill: none;
+  stroke: rgba(var(--accent-rgb), 0.75);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 5 95;
+  vector-effect: non-scaling-stroke;
+  animation: tracePulse 11s linear infinite;
+}
+@keyframes tracePulse { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -100; } }
+@media (prefers-reduced-motion: reduce) {
+  .skills-bg .trace-pulse { animation: none; opacity: 0; }
+}
 .filter-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
 .filter-chip {
   font-size: 0.86rem;
@@ -746,7 +766,7 @@ svg { display: block; }
   padding: 26px;
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
-.skill-card:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+.skill-card:hover { border-color: rgba(var(--accent-rgb), 0.8); transform: translateY(-3px); }
 .skill-category {
   font-family: var(--mono);
   font-size: 0.92rem;

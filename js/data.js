@@ -243,24 +243,24 @@ const SKILLS = [
     items: ["Python", "SQL", "R", "C++"],
   },
   {
-    category: "Data / Cloud",
-    items: ["Snowflake", "Snowpark", "dbt", "AWS", "PostgreSQL", "MySQL", "SQLite"],
+    category: "Databases & Cloud",
+    items: ["PostgreSQL", "MySQL", "Snowflake", "Snowpark", "AWS", "Google Cloud"],
   },
   {
-    category: "Machine Learning",
-    items: ["Scikit-learn", "XGBoost", "LightGBM", "TensorFlow", "PyTorch", "Keras"],
+    category: "Machine Learning & Deep Learning",
+    items: ["Scikit-learn", "PyTorch", "TensorFlow", "Keras", "OpenCV"],
   },
   {
-    category: "AI / GenAI",
-    items: ["LangChain", "LangGraph", "Hugging Face", "RAG", "LLMs", "Agentic AI", "Embeddings", "LLM Evaluation"],
+    category: "GenAI & Agentic AI",
+    items: ["LangChain", "LangGraph", "LlamaIndex", "Hugging Face", "RAG", "LLMs"],
   },
   {
-    category: "Deployment / Engineering",
-    items: ["FastAPI", "React", "Docker", "Git", "GitHub", "Render", "Netlify"],
+    category: "Engineering & Deployment",
+    items: ["MLflow", "dbt", "FastAPI", "Flask", "React", "Streamlit", "Docker", "Git", "GitHub", "CI/CD", "Render", "Netlify"],
   },
   {
-    category: "Visualization",
-    items: ["Tableau", "Power BI", "Matplotlib"],
+    category: "Data Analysis & Visualization",
+    items: ["Pandas", "NumPy", "Tableau", "Power BI", "Matplotlib", "Plotly"],
   },
 ];
 

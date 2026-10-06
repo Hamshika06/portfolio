@@ -206,6 +206,107 @@ function renderSkills() {
   $$(".skill-card", grid).forEach(observeReveal);
 }
 
+
+// ============================================================
+// Skills backdrop: circuit traces that plug into the skill boxes
+// ============================================================
+function drawSkillTraces() {
+  const sec = $("#skills");
+  const host = $("#skillsTraces");
+  const inner = sec && $(".section-inner", sec);
+  if (!host || !inner) return;
+
+  const W = sec.offsetWidth;
+  const H = sec.offsetHeight;
+  const boxes = $$(".skill-card", sec).map((c) => ({
+    x: c.offsetLeft + inner.offsetLeft,
+    y: c.offsetTop + inner.offsetTop,
+    w: c.offsetWidth,
+    h: c.offsetHeight,
+  }));
+  if (!boxes.length) { host.innerHTML = ""; return; }
+
+  const minX = Math.min(...boxes.map((b) => b.x));
+  const maxR = Math.max(...boxes.map((b) => b.x + b.w));
+  const maxB = Math.max(...boxes.map((b) => b.y + b.h));
+  const minY = Math.min(...boxes.map((b) => b.y));
+  const cols = [...new Set(boxes.map((b) => Math.round(b.x)))].sort((a, b) => a - b);
+
+  const paths = [];
+  const nodes = [];
+  const f = (n) => Math.round(n * 10) / 10;
+
+  // Side traces: run in from the page edge, jog 45 degrees, end in a ring touching a box edge.
+  function sideTraces(dir) {
+    const edge = dir < 0 ? minX : maxR;
+    const room = dir < 0 ? minX : W - maxR;
+    if (room < 60) return;
+    const x = (u) => f(edge + dir * u);
+    boxes
+      .filter((b) => (dir < 0 ? Math.round(b.x) === cols[0] : Math.round(b.x) === cols[cols.length - 1]))
+      .forEach((b, bi) => {
+        const ys = [b.y + 34, b.y + b.h - 34];
+        const dys = [-20, 20];
+        ys.forEach((y, i) => {
+          const dy = dys[i];
+          const u1 = 26 + ((i * 13 + bi * 9) % 30);
+          const jog = Math.abs(dy);
+          let d;
+          if (u1 + jog + 6 < room) {
+            d = `M${x(room)} ${f(y + dy)} H${x(u1 + jog)} L${x(u1)} ${f(y)} H${x(5)}`;
+          } else {
+            d = `M${x(room)} ${f(y)} H${x(5)}`;
+          }
+          paths.push(d);
+          nodes.push([x(5), f(y)]);
+        });
+      });
+  }
+  sideTraces(-1);
+  sideTraces(1);
+
+  // Bottom traces: drop from the bottom row of boxes, jog, then run to the edge or end in a ring.
+  if (H - maxB > 70) {
+    boxes.filter((b) => Math.abs(b.y + b.h - maxB) < 4).forEach((b) => {
+      const cx = b.x + b.w / 2;
+      const yb = b.y + b.h;
+      const ci = cols.indexOf(Math.round(b.x));
+      const last = ci === cols.length - 1;
+      const first = ci === 0;
+      let d;
+      if (first && cols.length > 1) d = `M${f(cx)} ${f(yb + 5)} V${f(yb + 26)} L${f(cx - 26)} ${f(yb + 52)} H0`;
+      else if (last && cols.length > 1) d = `M${f(cx)} ${f(yb + 5)} V${f(yb + 26)} L${f(cx + 26)} ${f(yb + 52)} H${W}`;
+      else d = `M${f(cx)} ${f(yb + 5)} V${f(yb + 62)}`;
+      paths.push(d);
+      nodes.push([f(cx), f(yb + 5)]);
+      if (!first && !last) nodes.push([f(cx), f(yb + 62)]);
+    });
+  }
+
+  // Top trace: leaves the middle box of the first row and runs to the right edge, clear of the title.
+  if (cols.length >= 3 && minY > 60) {
+    const mid = boxes.find((b) => Math.round(b.x) === cols[Math.floor(cols.length / 2)] && Math.abs(b.y - minY) < 4);
+    if (mid) {
+      const cx = mid.x + mid.w / 2;
+      paths.push(`M${f(cx)} ${f(minY - 5)} V${f(minY - 22)} L${f(cx + 24)} ${f(minY - 46)} H${W}`);
+      nodes.push([f(cx), f(minY - 5)]);
+    }
+  }
+
+  const traceSvg = paths.map((d) => `<path class="trace" d="${d}" />`).join("");
+  const nodeSvg = nodes.map(([x, y]) => `<circle class="trace-node" cx="${x}" cy="${y}" r="4.5" />`).join("");
+  const pulseSvg = paths
+    .map((d, i) => `<path class="trace-pulse" style="animation-delay:-${(i * 1.7).toFixed(1)}s;animation-duration:${9 + (i % 5) * 1.5}s" pathLength="100" d="${d}" />`)
+    .join("");
+  host.innerHTML = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${traceSvg}${nodeSvg}${pulseSvg}</svg>`;
+}
+
+let skillTraceTimer;
+function scheduleSkillTraces() {
+  clearTimeout(skillTraceTimer);
+  skillTraceTimer = setTimeout(drawSkillTraces, 120);
+}
+
 // ============================================================
 // Neural network background (hero) — lightweight canvas
 // ============================================================
@@ -305,6 +406,10 @@ renderJobs(RESEARCH, "#researchTimeline");
 renderFilters();
 renderProjects();
 renderSkills();
+drawSkillTraces();
+window.addEventListener("resize", scheduleSkillTraces);
+window.addEventListener("load", drawSkillTraces);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawSkillTraces);
 initNetworkCanvas();
 initResearchNodes();
 
