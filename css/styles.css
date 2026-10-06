@@ -782,12 +782,27 @@ svg { display: block; }
    ============================================================ */
 .contact { text-align: center; background: var(--bg-alt); border-top: 1px solid var(--border); }
 .contact-inner { display: flex; flex-direction: column; align-items: center; }
+.contact { position: relative; overflow: hidden; }
+.contact > .section-inner { position: relative; z-index: 1; }
+.contact-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.contact-glyph {
+  position: absolute;
+  color: rgba(var(--accent-rgb), 0.3);
+  animation: contactFloat 12s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes contactFloat {
+  from { transform: translateY(0) rotate(-4deg); }
+  to { transform: translateY(-16px) rotate(4deg); }
+}
+@media (max-width: 900px) { .contact-bg { display: none; } }
+@media (prefers-reduced-motion: reduce) { .contact-glyph { animation: none; } }
 .contact-title { max-width: 640px; margin-left: auto; margin-right: auto; }
 .contact-sub {
   color: var(--text-dim);
   font-size: 1.05rem;
   line-height: 1.75;
-  max-width: 560px;
+  max-width: 640px;
   margin: 0 auto 40px;
 }
 .contact-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
