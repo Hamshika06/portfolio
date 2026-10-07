@@ -317,18 +317,18 @@ function initNetworkCanvas() {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   let width, height, nodes;
-  const NODE_COUNT_BASE = 90;
+  const NODE_COUNT_BASE = 160;
 
   function resize() {
     const hero = canvas.parentElement;
     width = canvas.width = hero.offsetWidth;
     height = canvas.height = hero.offsetHeight;
-    const count = Math.max(42, Math.min(NODE_COUNT_BASE, Math.floor((width * height) / 15000)));
+    const count = Math.max(70, Math.min(NODE_COUNT_BASE, Math.floor((width * height) / 8000)));
     nodes = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.18,
-      vy: (Math.random() - 0.5) * 0.18,
+      vx: (Math.random() - 0.5) * 0.26,
+      vy: (Math.random() - 0.5) * 0.26,
     }));
   }
 
@@ -348,9 +348,9 @@ function initNetworkCanvas() {
         const a = nodes[i], b = nodes[j];
         const dx = a.x - b.x, dy = a.y - b.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const maxDist = 150;
+        const maxDist = 130;
         if (dist < maxDist) {
-          ctx.strokeStyle = `rgba(${accent}, ${0.12 * (1 - dist / maxDist)})`;
+          ctx.strokeStyle = `rgba(${accent}, ${0.1 * (1 - dist / maxDist)})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
